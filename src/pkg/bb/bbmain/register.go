@@ -16,7 +16,7 @@ import (
 	// dependency management for this main file is... hard.
 )
 
-// ErrNotRegistered is returned by Run if the given command is not registered.
+// ErrNotRegistered is returned by Run if the given command is not Registered.
 var ErrNotRegistered = errors.New("command is not present in busybox")
 
 // Noop is a noop function.

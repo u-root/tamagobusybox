@@ -34,6 +34,6 @@ func init() {
 func main() {
 	busyboxInit0()
 	busyboxInit1()
-	registeredInit()
-	registeredMain()
+	RegisteredInit()
+	RegisteredMain()
 }

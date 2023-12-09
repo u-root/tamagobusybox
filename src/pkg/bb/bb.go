@@ -18,7 +18,7 @@
 //     command package based on `argv[0]`.
 //
 // Principally, the AST transformation moves all global side-effects into
-// callable package functions. E.g. `main` becomes `registeredMain`, each
+// callable package functions. E.g. `main` becomes `RegisteredMain`, each
 // `init` becomes `initN`, and global variable assignments are moved into their
 // own `initN`.
 package bb

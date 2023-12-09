@@ -205,7 +205,7 @@ labels** (issue [#38](https://github.com/u-root/gobusybox/issues/38)).
 -   Any *imported* packages' `init` functions are run for *every* command.
 
     For example, if some command imports the `testing` package, all commands in
-    the busybox will have testing's flags registered as a side effect, because
+    the busybox will have testing's flags Registered as a side effect, because
     `testing`'s init function runs with every command.
 
     While Go busybox handles every main commands' init functions, it does not
@@ -349,11 +349,11 @@ ln -s bb strace
 ### Command Transformation
 
 Principally, the AST transformation moves all global side-effects into callable
-package functions. E.g. `main` becomes `registeredMain`, each `init` becomes
+package functions. E.g. `main` becomes `RegisteredMain`, each `init` becomes
 `initN`, and global variable assignments are moved into their own `initN`. A
-`registeredInit` calls each `initN` function in the correct init order.
+`RegisteredInit` calls each `initN` function in the correct init order.
 
-Then, these `registeredMain` and `registeredInit` functions can be registered
+Then, these `RegisteredMain` and `RegisteredInit` functions can be Registered
 with a global map of commands by name and used when called upon.
 
 Let's say a command `github.com/org/repo/cmds/sl` contains the following
@@ -401,18 +401,18 @@ func init1() {
   name = flag.String("name", "", "Gimme name")
 }
 
-func registeredInit() {
+func RegisteredInit() {
   // Order is determined by go/types.Info.InitOrder.
   init1()
   init0()
 }
 
-func registeredMain() {
+func RegisteredMain() {
   log.Printf("train")
 }
 
 func init() {
-  bbmain.Register("sl", registeredInit, registeredMain)
+  bbmain.Register("sl", RegisteredInit, RegisteredMain)
 }
 ```
 

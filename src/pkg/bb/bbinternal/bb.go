@@ -136,11 +136,11 @@ func NewPackage(name string, p *packages.Package) *Package {
 		initAssigns: make(map[ast.Expr]ast.Stmt),
 	}
 
-	pp.mainFuncName = pp.newFunctionName("registeredMain")
+	pp.mainFuncName = pp.newFunctionName("RegisteredMain")
 
 	// This Init will hold calls to all other InitXs.
 	pp.init = &ast.FuncDecl{
-		Name: ast.NewIdent(pp.newFunctionName("registeredInit")),
+		Name: ast.NewIdent(pp.newFunctionName("RegisteredInit")),
 		Type: &ast.FuncType{
 			Params:  &ast.FieldList{},
 			Results: nil,

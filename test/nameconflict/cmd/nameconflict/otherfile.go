@@ -27,10 +27,10 @@ func init() {
 	l.Printf("Yes hello %d this is %s:", anotherlog.Int(), foobar)
 }
 
-func registeredMain() {
-	l.Printf("registered main!")
+func RegisteredMain() {
+	l.Printf("Registered main!")
 }
 
-func registeredInit() {
-	l.Printf("registered init!")
+func RegisteredInit() {
+	l.Printf("Registered init!")
 }

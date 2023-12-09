@@ -31,10 +31,10 @@ func init() {
 	l.Printf("Yes hello this is %s:", foobar)
 }
 
-func registeredMain() {
-	l.Printf("registered main!")
+func RegisteredMain() {
+	l.Printf("Registered main!")
 }
 
-func registeredInit() {
-	l.Printf("registered init!")
+func RegisteredInit() {
+	l.Printf("Registered init!")
 }
